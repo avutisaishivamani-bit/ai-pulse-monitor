@@ -1,0 +1,53 @@
+[EVENT] Starting PulseMaintain AI Simulation
+[EVENT] Target: 400 operating hours
+[MLOPS] Hour 50: Initial model training...
+[MLOPS] Registered new active model version: RUL_Predictor v1
+[MLOPS] Registered new active model version: Failure_Predictor v1
+[ALERT] CRITICAL Alert created for M01 at hour 50.
+[MAINT] Work Order WO-E5312F assigned to T01
+[ALERT] CRITICAL Alert created for M02 at hour 50.
+[MAINT] Work Order WO-0EB20C assigned to T02
+[ALERT] CRITICAL Alert created for M04 at hour 50.
+[MAINT] Work Order WO-48DA5D assigned to T03
+[ALERT] CRITICAL Alert created for M06 at hour 50.
+[MAINT] Work Order WO-75CA05 assigned to T01
+[ALERT] CRITICAL Alert created for M07 at hour 50.
+[MAINT] Work Order WO-082E35 assigned to T02
+[ALERT] CRITICAL Alert created for M08 at hour 56.
+[MAINT] Work Order WO-CE7625 assigned to T03
+[ALERT] CRITICAL Alert created for M05 at hour 57.
+[MAINT] Work Order WO-4329CB assigned to T01
+[ALERT] CRITICAL Alert created for M03 at hour 69.
+[MAINT] Work Order WO-8A1068 assigned to T02
+[EVENT] Completed 100/400 simulated hours.
+[DRIFT] Hour 120: PSI=1.163 > 0.25. Consecutive drifts: 1
+[DRIFT] Hour 140: PSI=1.108 > 0.25. Consecutive drifts: 2
+[MLOPS] Hour 140: Drift confirmed. Initiating model retraining...
+[MLOPS] Registered new active model version: RUL_Predictor v2
+[MLOPS] Registered new active model version: Failure_Predictor v2
+[EVENT] Simulated hour 200 reached. Introducing calibration drift.
+[EVENT] Drift details: Vibration +1.6, Temperature +14, Pressure -9
+[EVENT] Completed 200/400 simulated hours.
+[EVENT] Completed 300/400 simulated hours.
+[EVENT] Completed 400/400 simulated hours.
+
+[EVENT] Simulation completed in 159.82 seconds.
+
+--- Simulation Summary ---
+Total simulated hours: 400
+Asset count: 8
+Sensor count: 24
+Telemetry records: 3200
+Prediction records: 2808
+Alert count: 8
+Work order count: 8
+
+--- ML Models ---
+[RUL_Predictor] v1 (RETIRED) - Metrics: {"MAE": 114.02}
+[Failure_Predictor] v1 (RETIRED) - Metrics: {"Accuracy": 0.92, "Precision": 0.85, "Recall": 0.94}
+[RUL_Predictor] v2 (ACTIVE) - Metrics: {"MAE": 75.42}
+[Failure_Predictor] v2 (ACTIVE) - Metrics: {"Accuracy": 1.0, "Precision": 1.0, "Recall": 1.0}
+
+--- MLOps ---
+Drift checks performed: 3
+Drift events detected: 2
